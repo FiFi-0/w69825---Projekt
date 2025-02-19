@@ -1,3 +1,8 @@
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
 namespace w69825___Projekt
 {
     public partial class Form1 : Form
@@ -9,18 +14,27 @@ namespace w69825___Projekt
 
         private void loadDataButton_Click(object sender, EventArgs e)
         {
-            System.Data.DataTable table = new System.Data.DataTable();
+            try
+            {
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyDatabase"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
-            table.Columns.Add("ID", typeof(int));
-            table.Columns.Add("Imiê", typeof(string));
-            table.Columns.Add("Nazwisko", typeof(string));
-            table.Columns.Add("Us³uga", typeof(string));
+                    string query = "SELECT * FROM Klient";
 
-            table.Rows.Add(1, "Jan", "Kowalski", "Strzy¿enie");
-            table.Rows.Add(2, "Anna", "Nowak", "Golenie");
-            table.Rows.Add(3, "Piotr", "Wiœniewski", "Farbowanie");
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    dataGridView1.DataSource = dataTable;
 
-            dataGridView1.DataSource = table;
+                    MessageBox.Show("Po³¹czenie z baz¹ danych zosta³o nawi¹zane!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wyst¹pi³ b³¹d podczas ³¹czenia z baz¹ danych: " + ex.Message, "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

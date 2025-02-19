@@ -2,15 +2,10 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -36,7 +31,7 @@
             // 
             // loadDataButton
             // 
-            loadDataButton.Location = new Point(558, 336);
+            loadDataButton.Location = new Point(184, 336);
             loadDataButton.Name = "loadDataButton";
             loadDataButton.Size = new Size(74, 36);
             loadDataButton.TabIndex = 0;
@@ -58,14 +53,14 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(184, 49);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(448, 281);
+            dataGridView1.Size = new Size(671, 281);
             dataGridView1.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1469, 491);
             Controls.Add(dataGridView1);
             Controls.Add(Title);
             Controls.Add(loadDataButton);
