@@ -23,21 +23,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            loadDataButton = new Button();
+            loadKlientButton = new Button();
             Title = new Label();
             dataGridView1 = new DataGridView();
+            LoadRezerwacjaButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // loadDataButton
+            // loadKlientButton
             // 
-            loadDataButton.Location = new Point(184, 336);
-            loadDataButton.Name = "loadDataButton";
-            loadDataButton.Size = new Size(74, 36);
-            loadDataButton.TabIndex = 0;
-            loadDataButton.Text = "load data";
-            loadDataButton.UseVisualStyleBackColor = true;
-            loadDataButton.Click += loadDataButton_Click;
+            loadKlientButton.Location = new Point(184, 336);
+            loadKlientButton.Name = "loadKlientButton";
+            loadKlientButton.Size = new Size(96, 41);
+            loadKlientButton.TabIndex = 0;
+            loadKlientButton.Text = "Wyświetl klientów";
+            loadKlientButton.UseVisualStyleBackColor = true;
+            loadKlientButton.Click += loadKlientButton_Click;
             // 
             // Title
             // 
@@ -56,14 +57,25 @@
             dataGridView1.Size = new Size(671, 281);
             dataGridView1.TabIndex = 2;
             // 
+            // LoadRezerwacjaButton
+            // 
+            LoadRezerwacjaButton.Location = new Point(286, 336);
+            LoadRezerwacjaButton.Name = "LoadRezerwacjaButton";
+            LoadRezerwacjaButton.Size = new Size(96, 41);
+            LoadRezerwacjaButton.TabIndex = 3;
+            LoadRezerwacjaButton.Text = "Wyświetl rezerwacje";
+            LoadRezerwacjaButton.UseVisualStyleBackColor = true;
+            LoadRezerwacjaButton.Click += LoadRezerwacjaButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1469, 491);
+            Controls.Add(LoadRezerwacjaButton);
             Controls.Add(dataGridView1);
             Controls.Add(Title);
-            Controls.Add(loadDataButton);
+            Controls.Add(loadKlientButton);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -73,8 +85,9 @@
 
         #endregion
 
-        private Button loadDataButton;
+        private Button loadKlientButton;
         private Label Title;
         private DataGridView dataGridView1;
+        private Button LoadRezerwacjaButton;
     }
 }
